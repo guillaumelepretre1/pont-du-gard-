@@ -23,6 +23,24 @@
                 },
             });
         </script>
+        
+        <script>
+            AFRAME.registerComponent("click", {
+                schema: {
+                     url: {
+                        default: ""
+                         }
+                      },
+             init: function() {
+                 var data = this.data;
+                 var el = this.el;
+             el.addEventListener("click", () => {
+            window.open(data.url, "_blank");
+             });
+            }
+         });
+      </script>
+
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -44,7 +62,7 @@
                     crossorigin
                     webkit-playsinline
                     autoplay
-                    muted
+                    
                     playsinline
                 ></video>
             </a-assets>
@@ -52,7 +70,7 @@
             <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/marker.patt"
+                url="marker.patt"
                 videohandler
                 smooth="true"
                 smoothCount="10"
@@ -71,6 +89,8 @@
                     autoplay loop="true"
                     class="clickable"
                     gesture-handler
+                    click="url: https://guarim.github.io/mbot/on-click.html"
+
                 ></a-video>
             </a-marker>
 
