@@ -53,9 +53,9 @@
             gesture-detector
         >
             <a-assets>
-                <video
-                    id="vid"
-                    src="assets/asset.mp4"
+                <a-image
+                    id="image"
+                    src="https://github.com/guillaumelepretre1/gaule-romaine-/blob/main/asset.jpeg"
                     preload="auto"
                     response-type="arraybuffer"
                     loop
@@ -64,7 +64,7 @@
                     autoplay
                     
                     playsinline
-                ></video>
+                ></a-image>
             </a-assets>
 
             <a-marker
@@ -81,17 +81,17 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <a-video
-                    src="#vid"
+                <a-image
+                    src="#image"
                     scale="1 1 1"
                     position="0 0.1 0"
                     rotation="-90 0 0"
-                    autoplay loop="true"
+                    
                     class="clickable"
                     gesture-handler
                     click="url: https://guarim.github.io/mbot/on-click.html"
 
-                ></a-video>
+                ></a-image>
             </a-marker>
 
             <a-entity camera></a-entity>
